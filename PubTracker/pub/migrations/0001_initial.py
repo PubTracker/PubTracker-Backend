@@ -32,10 +32,21 @@ class Migration(migrations.Migration):
             },
             bases=(models.Model,),
         ),
+        migrations.CreateModel(
+            name='RssNewsItem',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('title', models.CharField(max_length=200)),
+                ('summary', models.CharField(max_length=200)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
         migrations.AddField(
             model_name='choice',
             name='question',
-            field=models.ForeignKey(to='pub_backend.Question'),
+            field=models.ForeignKey(to='pub.Question'),
             preserve_default=True,
         ),
     ]
